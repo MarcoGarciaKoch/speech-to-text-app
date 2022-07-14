@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: url(./images/3d-render-digital-technology-background-network-communications-sound-waves.jpg) fixed no-repeat;
+    background-size: cover;
+}
+
+/*Logo and name style*/
+
+.logo-name__container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 70px;
+    height: 70px;
+    margin: 20px;
+}
+
+.logo-title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #a4a4a5;
+}
+
+/*General style of the card container*/
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 430px;
+    margin: 20px auto;
+    padding-bottom: 30px;
+    border: 1px solid #d0d0d2;
+    border-radius: 15px;
+    box-shadow: 2px 2px 3px #909091;
+    background-color: #d6d5d5;
+}
+
+/*Style of the title of the card*/
+
+.title, title-text {
+    margin: 30px 0px;
+    color: #56565a;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*Style of the recording buttons, recording status and waves*/
+
+i {
+    color: #ffffff;
+    font-size: 3rem;
+}
+
+.fa-microphone-lines {
+    font-size: 6rem;
+}
+
+.record-button{
+    background: #1453C0;
+    background: -moz-radial-gradient(center, #1453C0 0%, #071C2A 88%, #C5C2C0 100%);
+    background: -webkit-radial-gradient(center, #1453C0 0%, #071C2A 88%, #C5C2C0 100%);
+    background: radial-gradient(ellipse at center, #1453C0 0%, #071C2A 88%, #C5C2C0 100%);
+    height: 10rem;
+    width: 10rem;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #52525590;
+}
+
+.record__button--recording {
+    background: #AA133B;
+    background: -moz-radial-gradient(center, #AA133B 0%, #580A1E 88%, #C5C2C0 100%);
+    background: -webkit-radial-gradient(center, #AA133B 0%, #580A1E 88%, #C5C2C0 100%);
+    background: radial-gradient(ellipse at center, #AA133B 0%, #580A1E 88%, #C5C2C0 100%);
+}
+
+.record-button:active, .clipboard-button:active, .voice-button:active, .remove-button:active {
+    transform: scale(0.95);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.record-status, .record-listening, h2 {
+    color: #56565a;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.record-listening {
+    display: none;
+}
+
+.waves {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    visibility: hidden;
+}
+
+.boxContainer{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    --boxSize: 8px;
+    --gutter: 4px;
+    width: calc((var(--boxSize) + var(--gutter)) * 5);
+}
+
+.box{
+    transform: scaleY(.4);
+    height: 100%;
+    width: var(--boxSize);
+    background: #12E2DC;
+    background: -moz-radial-gradient(center, #12E2DC 0%, #086A67 88%, #C5C2C0 100%);
+    background: -webkit-radial-gradient(center, #12E2DC 0%, #086A67 88%, #C5C2C0 100%);
+    background: radial-gradient(ellipse at center, #12E2DC 0%, #086A67 88%, #C5C2C0 100%);
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    border-radius: 8px;
+}
+  
+.box1{
+    animation-name: quiet;
+}
+  
+.box2{
+    animation-name: normal;
+}
+  
+.box3{
+    animation-name: quiet;
+}
+  
+.box4{
+    animation-name: loud;
+}
+  
+.box5{
+    animation-name: quiet;
+}
+
+@keyframes quiet {
+    25%{
+      transform: scaleY(.6);
+    }
+    50%{
+      transform: scaleY(.4);
+    }
+    75%{
+      transform: scaleY(.8);
+    }
+  }
+  
+@keyframes normal {
+    25%{
+      transform: scaleY(1);
+    }
+    50%{
+      transform: scaleY(.4);
+    }
+    75%{
+      transform: scaleY(.6);
+    }
+}
+
+@keyframes loud {
+    25%{
+      transform: scaleY(1);
+    }
+    50%{
+      transform: scaleY(.4);
+    }
+    75%{
+      transform: scaleY(1.2);
+    }
+}
+
+/*Style of the text inserted by the user speech and clipboard - speak - remove buttons*/
+
+.task__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 5px 1px 10px 5px #6161625b;
+    margin: 15px 50px;
+    padding: 20px 25px;
+}
+
+.tasks__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    list-style-type: none;
+}
+
+.text {
+    color: #56565a;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.action-buttons__container {
+    display: flex;
+    gap: 1.3rem;
+    width: 100%;
+}
+
+.clipboard-button {
+    position: relative;
+    background: #DCC240;
+    background: -moz-radial-gradient(center, #DCC240 0%, #796B23 88%, #C5C2C0 100%);
+    background: -webkit-radial-gradient(center, #DCC240 0%, #796B23 88%, #C5C2C0 100%);
+    background: radial-gradient(ellipse at center, #DCC240 0%, #796B23 88%, #C5C2C0 100%);
+    height: 5rem;
+    width: 5rem;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #52525590;
+}
+
+.copy-alert {
+    display: block;
+    margin-bottom: 15px;
+    opacity: 0;
+    height: 15px;
+    width: 100%;
+    color: #424243;
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    animation: copyAlert 2s 1 linear;
+}
+
+@keyframes copyAlert {
+    0% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0.6;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.voice-button {
+    background: #238B80;
+    background: -moz-radial-gradient(center, #238B80 0%, #19645C 88%, #C5C2C0 100%);
+    background: -webkit-radial-gradient(center, #238B80 0%, #19645C 88%, #C5C2C0 100%);
+    background: radial-gradient(ellipse at center, #238B80 0%, #19645C 88%, #C5C2C0 100%);
+    height: 5rem;
+    width: 5rem;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #52525590;
+}
+
+.remove-button {
+    background: #AA133B;
+    background: -moz-radial-gradient(center, #AA133B 0%, #580A1E 88%, #C5C2C0 100%);
+    background: -webkit-radial-gradient(center, #AA133B 0%, #580A1E 88%, #C5C2C0 100%);
+    background: radial-gradient(ellipse at center, #AA133B 0%, #580A1E 88%, #C5C2C0 100%);
+    height: 5rem;
+    width: 5rem;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px #52525590;
+}
+
+.record-button:hover, .clipboard-button:hover, .voice-button:hover, .remove-button:hover {
+    cursor: pointer;
+}
+
+.reference-picture-autor {
+    display: flex;
+    flex-direction: column;
+    vertical-align: bottom;
+}
+
+.reference-picture-autor > a {
+    color: #d8d8dc;
+    font-size: 0.7rem;
+}
+
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 500px) {
+    
+    .app-container {
+        width: 90%;
+        margin: 20px 20px;
+    }
+    
+    /*Style of the title of the card*/
+    
+    .title, title-text {
+        text-align: center;
+    }
+    
+    /*Style of the recording buttons, recording status and waves*/
+    
+    i {
+        font-size: 2rem;
+    }
+    
+    .fa-microphone-lines {
+        font-size: 5rem;
+    }
+    
+    .record-button{
+        height: 9rem;
+        width: 9rem;
+    }
+    
+    /*Style of the text inserted by the user speech and clipboard - speak - remove buttons*/
+    
+    .action-buttons__container {
+        gap: 0.5rem;
+        padding: 0px 10px
+    }
+    
+    .clipboard-button, .voice-button, .remove-button {
+        height: 4rem;
+        width: 4rem;
+    }
+    
+    .copy-alert {
+        height: 10px;
+        margin-left: 15px;
+        font-size: 0.8rem;
+    }
+
+}

@@ -93,5 +93,5 @@ To do so, the following steps must be performed:
 1. Clone the monorepo
     > git clone https://github.com/MarcoGarciaKoch/speech-to-text-app.git
 
-2. Now you can test the app running the option `Open with Live Server` over the `spech-to-text.html` file.
+2. Now you can test the app running the option `Open with Live Server` over the `index.html` file.
 
